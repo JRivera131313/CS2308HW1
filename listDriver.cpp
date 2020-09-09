@@ -46,7 +46,7 @@ int main(){
   inFile >> command;
 
   numCommands = 0;
-  while (command != "Quit"){ 
+  while (command != "Quit"){
     if (command == "PutItem"){
       inFile >> number;
       item.Initialize(number);
@@ -54,7 +54,6 @@ int main(){
       item.Print(outFile);
       outFile << " is in list" << endl;
     }
-
     else if (command == "DeleteItem"){
       inFile >> number;
       item.Initialize(number);
@@ -62,7 +61,6 @@ int main(){
       item.Print(outFile);
       outFile << " is deleted" << endl;
     }
-
     else if (command == "GetItem"){
       inFile >> number;
       item.Initialize(number);
@@ -88,6 +86,9 @@ int main(){
 	  else if (command == "PrintList"){
 	  PrintList(outFile, list);
   }
+    else if (command == "SplitList"){
+
+    }
 	  else{
 	  cout << command << " is not a valid command." << endl;
     }

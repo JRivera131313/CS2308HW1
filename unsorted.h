@@ -67,6 +67,17 @@ class UnsortedType {
     // Post: Current position is updated to next position.
     //       item is a copy of element at current position.
 
+    /*
+      Function: divides list into two list according toi the key of item.
+      Preconditions: list has been initalized and is not empty
+      Post conditions list_1 contains all the items of list whose keys are less
+        than or EQUALto item's key; list_2 contains all the items of list whose
+        keys are greater than item's keys
+        ie: list_1 <= key
+            list_2 > key     
+    */
+    void SplitList(UnsortedType, ItemType item, UnsortedType& list_1, UnsortedType& list_2);
+
   private:
     NodeType* listData;
     int length;

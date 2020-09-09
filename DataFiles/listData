@@ -10,6 +10,7 @@ GetItem 4
 GetItem 5
 GetItem 9
 GetItem 10
+GetLength
 SplitList 6
 IsFull
 DeleteItem 5
