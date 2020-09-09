@@ -22,6 +22,7 @@ int main(){
   int number;
   ItemType item;
   UnsortedType list;
+  UnsortedType list_1, list_2;
   bool found;
   int numCommands;
 
@@ -87,7 +88,13 @@ int main(){
 	  PrintList(outFile, list);
   }
     else if (command == "SplitList"){
-
+      SplitList(list, item, list_1, list_2);
+      PrintList(outFile, list);
+      dataFile << "       ";
+      dataFile << "Key list split at" << item << "      ";
+      PrintList(outFile, list_1);
+      dataFile << "       ";
+      PrintList(outFile, list_2);
     }
 	  else{
 	  cout << command << " is not a valid command." << endl;

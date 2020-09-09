@@ -123,6 +123,10 @@ ItemType UnsortedType::GetNextItem(){
   return item;
 }
 
+void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
+
+}
+
 // Post: List is empty; all items have been deallocated.
 UnsortedType::~UnsortedType(){
   NodeType* tempPtr;
