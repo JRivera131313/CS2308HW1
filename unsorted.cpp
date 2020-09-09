@@ -1,5 +1,4 @@
-// This file contains the linked implementation of class
-// UnsortedType.
+// This file contains the linked implementation of class UnsortedType.
 
 #include "unsorted.h"
 struct NodeType
@@ -14,7 +13,7 @@ UnsortedType::UnsortedType()  // Class constructor
   listData = NULL;
 }
 bool UnsortedType::IsFull() const
-// Returns true if there is no room for another ItemType 
+// Returns true if there is no room for another ItemType
 //  on the free store; false otherwise.
 {
   NodeType* location;
@@ -54,9 +53,9 @@ void UnsortedType::PutItem(ItemType item)
 {
   NodeType* location;			// Declare a pointer to a node
 
-  location = new NodeType;		// Get a new node 
+  location = new NodeType;		// Get a new node
   location->info = item;		// Store the item in the node
-  location->next = listData;	// Store address of first node 
+  location->next = listData;	// Store address of first node
 						//   in next field of new node
   listData = location;		// Store address of new node into
 						//   external pointer
@@ -65,9 +64,9 @@ void UnsortedType::PutItem(ItemType item)
 
 ItemType UnsortedType::GetItem(ItemType& item, bool& found)
 // Pre:  Key member(s) of item is initialized.
-// Post: If found, item's key matches an element's key in the 
+// Post: If found, item's key matches an element's key in the
 //       list and a copy of that element has been stored in item;
-//       otherwise, item is unchanged. 
+//       otherwise, item is unchanged.
 {
   bool moreToSearch;
   NodeType* location;
@@ -76,11 +75,11 @@ ItemType UnsortedType::GetItem(ItemType& item, bool& found)
   found = false;
   moreToSearch = (location != NULL);
 
-  while (moreToSearch && !found) 
+  while (moreToSearch && !found)
   {
     switch (item.ComparedTo(location->info))
     {
-      case LESS    : 
+      case LESS    :
       case GREATER : location = location->next;
                      moreToSearch = (location != NULL);
                      break;
@@ -124,7 +123,7 @@ void UnsortedType::ResetList()
 {
   currentPos = NULL;
 }
- 
+
 ItemType UnsortedType::GetNextItem()
 // Post:  A copy of the next item in the list is returned.
 //        When the end of the list is reached, currentPos
@@ -151,8 +150,3 @@ UnsortedType::~UnsortedType()
     delete tempPtr;
   }
 }
-
-
-
-
-
