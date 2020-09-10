@@ -48,10 +48,8 @@ void UnsortedType::PutItem(ItemType item){
 
   location = new NodeType;		// Get a new node
   location->info = item;		// Store the item in the node
-  location->next = listData;	// Store address of first node
-						//   in next field of new node
-  listData = location;		// Store address of new node into
-						//   external pointer
+  location->next = listData;	// Store address of first node in next field of new node
+  listData = location;		// Store address of new node into external pointer
   length++;				// Increment length of the list
 }
 
@@ -124,6 +122,32 @@ ItemType UnsortedType::GetNextItem(){
 }
 
 void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
+  int  length = GetLength(list);
+
+  //Construct list_1
+  for (int i = 0; i <= length ; i++) {
+    int length;
+    int counter = 1;
+    ItemType tempItem;
+
+    list.ResetList();
+    length = list.GetLength();
+    tempItem = list.GetNextItem();
+
+    for (counter; counter <= length; counter++){
+      if (tempItem == item) {
+        list_1.PutItem(tempItem);
+        break;
+      }
+      else{
+        list_1.PutItem(tempItem);
+      }
+    counter++;
+    }
+    for (counter; counter <= length ; counter++) {
+        list_2.putItem(tempItem);
+    }
+  }
 
 }
 
