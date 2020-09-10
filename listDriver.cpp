@@ -95,7 +95,7 @@ int main(){
 
       list.SplitList(list, item, list_1, list_2);
 
-      PrintList(outFile, list);
+    //  PrintList(outFile, list);
       outFile << "       ";
       outFile << "Key list split at";
       item.Print(outFile);
