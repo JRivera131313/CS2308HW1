@@ -22,7 +22,8 @@ int main(){
   int number;
   ItemType item;
   UnsortedType list;
-  UnsortedType list_1, list_2;
+  UnsortedType list_1;
+  UnsortedType list_2;
   bool found;
   int numCommands;
 
@@ -90,10 +91,10 @@ int main(){
     else if (command == "SplitList"){
       SplitList(list, item, list_1, list_2);
       PrintList(outFile, list);
-      dataFile << "       ";
-      dataFile << "Key list split at" << item << "      ";
+      outFile << "       ";
+      outFile << "Key list split at" << item << "      ";
       PrintList(outFile, list_1);
-      dataFile << "       ";
+      outFile << "       ";
       PrintList(outFile, list_2);
     }
 	  else{

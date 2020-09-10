@@ -74,9 +74,9 @@ class UnsortedType {
         than or EQUALto item's key; list_2 contains all the items of list whose
         keys are greater than item's keys
         ie: list_1 <= key
-            list_2 > key     
+            list_2 > key
     */
-    void SplitList(UnsortedType, ItemType item, UnsortedType& list_1, UnsortedType& list_2);
+    void SplitList(UnsortedType list, ItemType item, UnsortedType& list_1, UnsortedType& list_2);
 
   private:
     NodeType* listData;
