@@ -89,10 +89,16 @@ int main(){
 	  PrintList(outFile, list);
   }
     else if (command == "SplitList"){
-      SplitList(list, item, list_1, list_2);
+      inFile >> number;
+      item.Initialize(number);
+      item = list.GetItem(item, found);
+
+      list.SplitList(list, item, list_1, list_2);
+
       PrintList(outFile, list);
       outFile << "       ";
-      outFile << "Key list split at" << item << "      ";
+      outFile << "Key list split at";
+      item.Print(outFile);
       PrintList(outFile, list_1);
       outFile << "       ";
       PrintList(outFile, list_2);

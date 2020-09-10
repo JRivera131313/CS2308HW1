@@ -122,34 +122,22 @@ ItemType UnsortedType::GetNextItem(){
 }
 
 void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
-  int  length = GetLength(list);
-
   //Construct list_1
-  for (int i = 0; i <= length ; i++) {
     int length;
-    int counter = 1;
     ItemType tempItem;
 
     list.ResetList();
-    length = list.GetLength();
-    tempItem = list.GetNextItem();
 
-    for (counter; counter <= length; counter++){
-      if (tempItem == item) {
+    length = list.GetLength();
+
+    for (int counter = 1; counter <= length; counter++){
+      tempItem = list.GetNextItem();
+      if (tempItem.ComparedTo(item) == EQUAL) {
         list_1.PutItem(tempItem);
         break;
       }
-      else{
-        list_1.PutItem(tempItem);
-      }
-    counter++;
-    }
-    for (counter; counter <= length ; counter++) {
-        list_2.putItem(tempItem);
-    }
   }
 
-}
 
 // Post: List is empty; all items have been deallocated.
 UnsortedType::~UnsortedType(){
