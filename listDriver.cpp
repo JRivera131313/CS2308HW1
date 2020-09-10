@@ -66,8 +66,7 @@ int main(){
     else if (command == "GetItem"){
       inFile >> number;
       item.Initialize(number);
-      cout<<number;
-      item = list.GetItem(item, found);
+      item = list.GetItem(item, found); //SEGFAULT After SplitList
       item.Print(outFile);
 
       if (found)
