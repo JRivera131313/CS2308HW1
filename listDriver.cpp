@@ -66,6 +66,7 @@ int main(){
     else if (command == "GetItem"){
       inFile >> number;
       item.Initialize(number);
+      cout<<number;
       item = list.GetItem(item, found);
       item.Print(outFile);
 
@@ -93,15 +94,19 @@ int main(){
       item.Initialize(number);
       item = list.GetItem(item, found);
 
+      outFile << "       ";
+      outFile << "list split at key ";
+      item.Print(outFile);
+      outFile << endl;
       list.SplitList(list, item, list_1, list_2);
 
     //  PrintList(outFile, list);
-      outFile << "       ";
-      outFile << "Key list split at";
-      item.Print(outFile);
+    outFile << "List 1: ";
       PrintList(outFile, list_1);
-      outFile << "       ";
+      outFile << endl;
+      outFile << "List 2:";
       PrintList(outFile, list_2);
+    list.ResetList();
     }
 	  else{
 	  cout << command << " is not a valid command." << endl;

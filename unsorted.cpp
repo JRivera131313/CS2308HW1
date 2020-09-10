@@ -1,6 +1,9 @@
 // This file contains the linked implementation of class UnsortedType.
 
 #include "unsorted.h"
+#include<iostream>
+using namespace std;
+
 struct NodeType{
     ItemType info;
     NodeType* next;
@@ -118,6 +121,7 @@ ItemType UnsortedType::GetNextItem(){
   else
     currentPos = currentPos->next;
   item = currentPos->info;
+  cout << currentPos<< endl;
   return item;
 }
 
@@ -128,10 +132,9 @@ void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& lis
     ItemType tempItem;
 
     list.ResetList();
-
     length = list.GetLength();
 
-    for (counter = 1; counter < length; counter++){
+    for (counter = 1; counter <= length; counter++){
       tempItem = list.GetNextItem();
       if (tempItem.ComparedTo(item) == EQUAL) {
         list_1.PutItem(tempItem);
@@ -140,12 +143,13 @@ void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& lis
       else{
         list_1.PutItem(tempItem);
       }
+    }
 
+    cout << length;
     for (int counter2 = counter; counter2 < length; counter2++) {
       tempItem = list.GetNextItem();
       list_2.PutItem(tempItem);
     }
-  }
 }
 
 // Post: List is empty; all items have been deallocated.
