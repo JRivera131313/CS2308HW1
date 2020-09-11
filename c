@@ -13,8 +13,9 @@ GetItem 10
 GetLength
 SplitList 6
 IsFull
+GetItem 9
+Error
 PrintList
 MakeEmpty
 PrintList
-Error
 Quit
