@@ -121,7 +121,6 @@ ItemType UnsortedType::GetNextItem(){
   else
     currentPos = currentPos->next;
   item = currentPos->info;
-  cout << currentPos<< endl;
   return item;
 }
 
@@ -145,7 +144,6 @@ void UnsortedType::SplitList(UnsortedType list, ItemType item, UnsortedType& lis
       }
     }
 
-    cout << length;
     for (int counter2 = counter; counter2 < length; counter2++) {
       tempItem = list.GetNextItem();
       list_2.PutItem(tempItem);

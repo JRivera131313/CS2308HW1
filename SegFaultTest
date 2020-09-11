@@ -1,4 +1,4 @@
-Test
+SegFaultTest
 Length is 0
 5 is in list
 7 is in list
@@ -17,3 +17,4 @@ List 1: 6 9 1
 
 List 2:5 7 
 List is not full.
+14619400 14618312 14614720 14644136 14619400 
