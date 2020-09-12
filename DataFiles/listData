@@ -7,6 +7,7 @@ PrintList
 PutItem 1
 PrintList
 GetItem 4
+IsFull
 GetItem 5
 GetItem 9
 GetItem 10
@@ -16,5 +17,15 @@ IsFull
 PrintList
 MakeEmpty
 PrintList
+PutItem 1
+PutItem 12
+PutItem 24
+PutItem 48
+PutItem 96
+PutItem 5
+Error
+GetItem 48
+PrintList
+SplitList 12
 Error
 Quit
