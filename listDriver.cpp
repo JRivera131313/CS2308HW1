@@ -93,19 +93,20 @@ int main(){
       item.Initialize(number);
       item = list.GetItem(item, found);
 
-      outFile << "       ";
-      outFile << "list split at key ";
+      outFile << "Initial List: ";
+      PrintList(outFile, list);
+      outFile << "list split at key: ";
       item.Print(outFile);
       outFile << endl;
+
       list.SplitList(list, item, list_1, list_2);
 
-    //  PrintList(outFile, list);
-    outFile << "List 1: ";
+      outFile << "List 1: ";
       PrintList(outFile, list_1);
-      outFile << endl;
-      outFile << "List 2:";
+
+      outFile << "List 2: ";
       PrintList(outFile, list_2);
-    list.ResetList();
+    //list.ResetList();
     }
 	  else{
 	  cout << command << " is not a valid command." << endl;
