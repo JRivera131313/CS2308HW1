@@ -2,7 +2,7 @@
 
 #include "unsorted.h"
 #include<iostream>
-using namespace std;
+
 
 struct NodeType{
     ItemType info;
@@ -124,30 +124,37 @@ ItemType UnsortedType::GetNextItem(){
   return item;
 }
 
-void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
-  //Construct list_1
-    int length;
-    int counter;
-    ItemType tempItem;
+void UnsortedType::SplitList(UnsortedType& list, ItemType& item, UnsortedType& list_1, UnsortedType& list_2){
+  int counter;
+  NodeType* location;
+  bool moreToSearch;
 
-    list.ResetList();
-    length = list.GetLength();
+  list.ResetList();
 
-    for (counter = 1; counter <= length; counter++){
-      tempItem = list.GetNextItem();
-      if (tempItem.ComparedTo(item) == EQUAL) {
-        list_1.PutItem(tempItem);
+  counter = 1;
+  length = list.GetLength();
+  location = listData;
+  moreToSearch = (location != NULL);
+
+  while (moreToSearch && counter <= length){
+    switch (item.ComparedTo(location->info)){
+      case GREATER:
+        list_1.PutItem(location->info);
+        location = location->next;
+        counter++;
         break;
-      }
-      else{
-        list_1.PutItem(tempItem);
-      }
+      case EQUAL:
+        list_1.PutItem(location->info);
+        location = location->next;
+        counter++;
+        break;
+      case LESS:
+        list_2.PutItem(location->info);
+        location = location->next;
+        counter++;
+        break;
     }
-
-    for (int counter2 = counter; counter2 < length; counter2++) {
-      tempItem = list.GetNextItem();
-      list_2.PutItem(tempItem);
-    }
+  }
 }
 
 // Post: List is empty; all items have been deallocated.

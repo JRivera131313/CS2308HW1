@@ -76,7 +76,7 @@ class UnsortedType {
         ie: list_1 <= key
             list_2 > key
     */
-    void SplitList(UnsortedType& list, ItemType item, UnsortedType& list_1, UnsortedType& list_2);
+    void SplitList(UnsortedType& list, ItemType& item, UnsortedType& list_1, UnsortedType& list_2);
 
   private:
     NodeType* listData;
