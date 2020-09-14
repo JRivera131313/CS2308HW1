@@ -124,7 +124,7 @@ ItemType UnsortedType::GetNextItem(){
   return item;
 }
 
-void UnsortedType::SplitList(UnsortedType& list, ItemType& item, UnsortedType& list_1, UnsortedType& list_2){
+void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
   int counter;
   NodeType* location;
   bool moreToSearch;

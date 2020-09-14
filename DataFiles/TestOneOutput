@@ -1,0 +1,24 @@
+Test
+Length is 0
+1 is in list
+10 is in list
+3 is in list
+10 found in list.
+4 not in list.
+Length is 3
+List is not full.
+3 10 1 
+4 is in list
+5 is in list
+34 is in list
+23 is in list
+12 is in list
+101 is in list
+202 is in list
+303 is in list
+52 is in list
+Initial List: 52 303 202 101 12 23 34 5 4 3 10 1 
+list split at key: 50
+List 1: 1 10 3 4 5 34 23 12 
+List 2: 101 202 303 52 
+

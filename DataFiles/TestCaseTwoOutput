@@ -1,0 +1,24 @@
+Test2
+Length is 0
+1 is in list
+2 is in list
+3 is in list
+400 not in list.
+4 not in list.
+Length is 3
+List is not full.
+3 2 1 
+4 is in list
+5 is in list
+6 is in list
+7 is in list
+8 is in list
+9 is in list
+10 is in list
+11 is in list
+12 is in list
+Initial List: 12 11 10 9 8 7 6 5 4 3 2 1 
+list split at key: 6
+List 1: 1 2 3 4 5 6 
+List 2: 7 8 9 10 11 12 
+
