@@ -129,29 +129,27 @@ void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& li
   NodeType* location;
   bool moreToSearch;
 
-  list.ResetList();
-
-  counter = 1;
-  length = list.GetLength();
   location = listData;
   moreToSearch = (location != NULL);
 
-  while (moreToSearch && counter <= length){
+  while (moreToSearch){
     switch (item.ComparedTo(location->info)){
       case GREATER:
         list_1.PutItem(location->info);
         location = location->next;
-        counter++;
+        moreToSearch = (location != NULL);
         break;
+
       case EQUAL:
         list_1.PutItem(location->info);
         location = location->next;
-        counter++;
+        moreToSearch = (location != NULL);
         break;
+
       case LESS:
         list_2.PutItem(location->info);
         location = location->next;
-        counter++;
+        moreToSearch = (location != NULL);
         break;
     }
   }
