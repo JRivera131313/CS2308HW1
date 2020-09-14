@@ -143,7 +143,7 @@ void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& li
       case EQUAL:
         list_1.PutItem(location->info);
         location = location->next;
-        moreToSearch = (location != NULL);
+        moreToSearch = (location != NULL);SF
         break;
 
       case LESS:
