@@ -1,4 +1,4 @@
-Test
+quit
 Length is 0
 5 is in list
 7 is in list
@@ -22,4 +22,3 @@ list split at key: 20
 List 1: 5 7 6 9 1 10 
 List 2: 21 32 43 
 List is not full.
-7341248 7369616 7340224 7383368 7341248 7368080 7369616 7340224 7383368 
