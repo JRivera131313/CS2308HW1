@@ -91,7 +91,7 @@ int main(){
     else if (command == "SplitList"){
       inFile >> number;
       item.Initialize(number);
-      item = list.GetItem(item, found);
+      //item = list.GetItem(item, found);
 
       outFile << "Initial List: ";
       PrintList(outFile, list);
