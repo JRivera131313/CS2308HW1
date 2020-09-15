@@ -7,8 +7,8 @@ GetItem 4
 GetLength
 IsFull
 PrintList
-PutItem 4
-PutItem 5
+PutItem -4
+PutItem -5
 PutItem 34
 PutItem 23
 PutItem 12
