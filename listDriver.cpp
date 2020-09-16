@@ -105,7 +105,6 @@ int main(){
 
       outFile << "List 2: ";
       PrintList(outFile, list_2);
-    //list.ResetList();
     }
 	  else{
 	  cout << command << " is not a valid command." << endl;

@@ -125,7 +125,6 @@ ItemType UnsortedType::GetNextItem(){
 }
 
 void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& list_1, UnsortedType& list_2){
-  int counter;
   NodeType* location;
   bool moreToSearch;
 
@@ -133,20 +132,15 @@ void UnsortedType::SplitList(UnsortedType& list, ItemType item, UnsortedType& li
   moreToSearch = (location != NULL);
 
   while (moreToSearch){
-    switch (item.ComparedTo(location->info)){
-      case GREATER:
-        list_1.PutItem(location->info);
-        location = location->next;
-        moreToSearch = (location != NULL);
-        break;
-
+    switch (location->info.ComparedTo(item)){
+      case LESS:
       case EQUAL:
         list_1.PutItem(location->info);
         location = location->next;
         moreToSearch = (location != NULL);
         break;
 
-      case LESS:
+      case GREATER:
         list_2.PutItem(location->info);
         location = location->next;
         moreToSearch = (location != NULL);
